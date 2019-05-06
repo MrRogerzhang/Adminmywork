@@ -4,7 +4,7 @@
         <div class="collapse-btn" @click="collapseChage">
             <i class="el-icon-menu"></i>
         </div>
-        <div class="logo">后台管理系统</div>
+        <div class="logo">云微科技后台管理系统</div>
         <div class="header-right">
             <div class="header-user-con">
                 <!-- 全屏显示 -->
@@ -31,10 +31,10 @@
                     </span>
                     <el-dropdown-menu slot="dropdown">
                         <a href="#" target="_blank">
-                            <el-dropdown-item>关于作者</el-dropdown-item>
+                            <el-dropdown-item>账号资料设置</el-dropdown-item>
                         </a>
                         <a href="#" target="_blank">
-                            <el-dropdown-item>项目仓库</el-dropdown-item>
+                            <el-dropdown-item>进入企业后台</el-dropdown-item>
                         </a>
                         <el-dropdown-item divided  command="loginout">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
