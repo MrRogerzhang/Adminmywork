@@ -6,7 +6,7 @@ import router from './router'
 // 引入清除默认样式文件
 import '@/style/reset.css'
 import '@/style/border.css'
-
+import '@/assets/love.js'
 // // 引入axios
 import axios from 'axios'
 // // 引入elementui
