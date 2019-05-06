@@ -1,0 +1,32 @@
+/*
+* @Author: ZhangYu
+* @Date:   2018-12-08 19:57:37
+* @Last Modified by:   ZhangYu
+* @Last Modified time: 2018-12-09 14:38:20
+*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+[v-cloak] {
+    display: none;
+}
+// 主色调
+$mainColor: #30343F;
+// 副色调
+$deputyColor: #1aa094;
+
+/**
+ * [arrow 用来创建箭头图标]
+ * @param  {[type]} $w:   10px          箭头宽度
+ * @param  {[type]} $c: #fff         箭头色彩
+ * @param  {[type]} $dir: top           箭头方向
+ * @return {[type]}       得到一个箭头
+ */
+@mixin arrow($w: 10px, $c: #fff, $dir: top) {
+    line-height: 0;
+    width: 0;
+    border: $w solid transparent;
+    border-#{$dir}-color: $c;
+}
