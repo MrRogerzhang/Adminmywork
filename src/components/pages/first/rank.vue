@@ -22,7 +22,7 @@
           </el-dropdown>
         </span>
         <span class="speac">
-          <el-date-picker v-model="value2" type="month" placeholder="选择月" style="width:60px"></el-date-picker>
+          <el-date-picker v-model="value" type="month" placeholder="选择月" style="width:60px"></el-date-picker>
         </span>
       </div>
     </div>

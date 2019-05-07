@@ -26,7 +26,17 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(VCharts);
 Vue.component(VeLine.name, VeLine)
 Vue.config.productionTip = false
-Vue.prototype.$http = axios
+import {
+  post,
+  fetch,
+  patch,
+  put
+} from './api/api'
+//定义全局变量
+Vue.prototype.$post = post;
+Vue.prototype.$fetch = fetch;
+Vue.prototype.$patch = patch;
+Vue.prototype.$put = put;
 
 router.beforeEach((to, from, next) => {
   const role = localStorage.getItem('ms_username')
