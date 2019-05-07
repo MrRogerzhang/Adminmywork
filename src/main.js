@@ -40,7 +40,6 @@ Vue.prototype.$put = put;
 
 router.beforeEach((to, from, next) => {
   const role = localStorage.getItem('ms_username')
-  console.log(role)
   if (!role && to.path !== '/login') {
     next('/login')
   } else if (to.meta.permission) {

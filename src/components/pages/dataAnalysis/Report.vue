@@ -182,7 +182,7 @@ export default {
     return {
       total: "0",
       currentPage: 1,
-      pagesize: 15,
+      pagesize: 10,
       show: true,
       editVisible: false,
       delVisible: false,
