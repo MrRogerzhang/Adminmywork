@@ -6,9 +6,9 @@ import router from './router'
 // 引入清除默认样式文件
 import '@/style/reset.css'
 import '@/style/border.css'
-import '@/assets/love.js'
+// import '@/assets/love.js'
 // // 引入axios
-import axios from 'axios'
+// import axios from 'axios'
 // // 引入elementui
 import ElementUI from 'element-ui'
 import 'babel-polyfill'
@@ -17,7 +17,10 @@ import VCharts from 'v-charts';
 import VeLine from 'v-charts/lib/line.common'
 
 import login from '@/components/pages/login';
-
+// 引入untils
+import untils from '@/untils/untils'
+// 弹框拖拽属性
+import '@/components/common/directives.js'
 Vue.use(ElementUI, {
   size: 'small'
 });
@@ -25,6 +28,7 @@ Vue.use(ElementUI, {
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(VCharts);
 Vue.component(VeLine.name, VeLine)
+
 Vue.config.productionTip = false
 import {
   post,
@@ -37,7 +41,7 @@ Vue.prototype.$post = post;
 Vue.prototype.$fetch = fetch;
 Vue.prototype.$patch = patch;
 Vue.prototype.$put = put;
-
+Vue.prototype.untils = untils
 router.beforeEach((to, from, next) => {
   const role = localStorage.getItem('ms_username')
   if (!role && to.path !== '/login') {
