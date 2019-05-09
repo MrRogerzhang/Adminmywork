@@ -79,7 +79,7 @@ export default {
             },
             {
               index: "Permission",
-              title: "报表权限管理"
+              title: "报表文件"
             },
             {
               index: "Subscription",
