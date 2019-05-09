@@ -7,6 +7,26 @@
         <img class="dataAnalysis_icon" src="../../../assets/icon/mark.png" alt>
       </div>
     </div>
+    <!-- 文件夹头部设置 -->
+    <!-- <el-col :span="24" style="padding-bottom:0px">
+      <el-form :model="filters" :inline="true">
+        <el-form-item>
+          <el-input placeholder="姓名" v-model="select_word"></el-input>
+        </el-form-item>
+
+        <el-form-item>
+          <el-button type="primary">查询</el-button>
+        </el-form-item>
+
+        <el-form-item>
+          <el-button type="primary" @click="useradd">新增</el-button>
+        </el-form-item>
+
+        <el-form-item>
+          <el-button type="primary" icon="delete" @click="deleteAll">批量删除</el-button>
+        </el-form-item>
+      </el-form>
+    </el-col>-->
 
     <div class="dataAnalysis_main">
       <div class="oneData">
@@ -26,16 +46,23 @@
           <!-- <el-table-item> -->
           <el-table-column label="文件" sortable width="250">
             <template slot-scope="scope">
-              <img v-if="scope.row.children"
+              <img
+                v-if="scope.row.children"
                 src="https://a9.fspage.com/FSR/frontend/html/bi-dist/assets/images/folder-icon-8c81d960c0.png"
                 alt
               >
-              <img v-else src="https://a9.fspage.com/FSR/frontend/html/bi-dist/assets/images/item-icon-469b5eb448.png" alt="">
-              <span style="margin-left: 5px;font-size:14px;line-height: 23px;">{{ scope.row.csentence }}</span>
+              <img
+                v-else
+                src="https://a9.fspage.com/FSR/frontend/html/bi-dist/assets/images/item-icon-469b5eb448.png"
+                alt
+              >
+              <span
+                style="margin-left: 5px;font-size:14px;line-height: 23px;"
+              >{{ scope.row.csentence }}</span>
             </template>
           </el-table-column>
           <!-- </el-table-item> -->
-          <el-table-column prop="name" label="人物" sortable width="150"></el-table-column>
+          <el-table-column prop="name" label="姓名" sortable width="150"></el-table-column>
           <el-table-column prop="date" label="时间" sortable width="200"></el-table-column>
           <el-table-column prop="address" label="描述" sortable></el-table-column>
           <!-- ---操作页面--- -->
@@ -45,14 +72,9 @@
                 v-if="(scope.row.children)"
                 type="text"
                 icon="el-icon-edit"
-                @click="handleEdit(scope.$index, scope.row)"
+                @click="handleNewname(scope.$index ,scope )"
               >重命名</el-button>
-              <el-button
-                v-else
-                type="text"
-                icon="el-icon-edit"
-                @click="handleEdit(scope.$index, scope.row)"
-              >编辑</el-button>
+              <el-button v-else type="text" icon="el-icon-edit" @click="handleEdit()">编辑</el-button>
               <el-button
                 type="text"
                 icon="el-icon-delete"
@@ -63,6 +85,27 @@
         </el-table>
       </div>
     </div>
+
+    <!--  /------------------/  重命名弹出框  /----------------------/-->
+    <el-dialog title="重命名" :visible.sync="resetName" width="30%">
+      <el-form ref="rename" :model="rename" label-width="100px">
+        <!-- 重命名 -->
+        <el-form-item label="修改名称">
+          <el-input v-model="rename.csentence"></el-input>
+        </el-form-item>
+
+        <!-- 调整修改人 -->
+        <el-form-item class="needmodify" label="修改人">
+          <el-input v-model="rename.name"></el-input>
+        </el-form-item>
+
+        <!-- 进行确认事件 -->
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="resetName = false">取 消</el-button>
+        <el-button type="primary" @click.native="saveNewname">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -74,6 +117,7 @@ export default {
   data() {
     return {
       total: "0",
+      resetName: false,
       choseData: [],
       currentPage: 1,
       select_word: "",
@@ -89,17 +133,9 @@ export default {
       filters: {
         name: ""
       },
-      from: {
+      rename: {
         csentence: "",
-        name: "",
-        date: "",
-        address: ""
-      },
-      addfromm: {
-        csentence: "",
-        name: "",
-        date: "",
-        address: ""
+        name: ""
       }
     };
   },
@@ -120,26 +156,26 @@ export default {
   },
   methods: {
     // 新增用户
-    useradd() {
-      this.addVisible = true;
-      this.addfromm = {
-        csentence: "",
-        name: "",
-        date: "",
-        address: ""
-      };
-    },
-    // 新增用户点击确定操作
-    saveAddfrom() {
-      this.$refs.addfromm.validate(valid => {
-        if (valid) {
-          this.addVisible = false;
-          this.data.pop();
-          this.data.unshift(this.addfromm);
-          this.$message.success("添加成功");
-        }
-      });
-    },
+    // useradd() {
+    //   this.addVisible = true;
+    //   this.addfromm = {
+    //     csentence: "",
+    //     name: "",
+    //     date: "",
+    //     address: ""
+    //   };
+    // },
+    // // 新增用户点击确定操作
+    // saveAddfrom() {
+    //   this.$refs.addfromm.validate(valid => {
+    //     if (valid) {
+    //       this.addVisible = false;
+    //       this.data.pop();
+    //       this.data.unshift(this.addfromm);
+    //       this.$message.success("添加成功");
+    //     }
+    //   });
+    // },
 
     gettableData() {
       this.$fetch("/userDetail_many", {}).then(response => {
@@ -153,62 +189,64 @@ export default {
     handleSizeChange: function(size) {
       this.pagesize = size;
     },
-    handleCurrentChange: function(currentPage) {
-      this.currentPage = currentPage;
-    },
+
     select(selection) {
       this.choseData = selection;
-
       if (selection.length == 0) {
         this.show = true;
       } else {
         this.show = false;
       }
     },
+
+    // check 按钮
     handleSelectionChange(val) {
       this.multipleSelection = val;
     },
-    // 点击删除
-    handleDelete(index, row) {
-      console.log(index);
-      this.idx = index;
-      this.delVisible = true;
-    },
-    // 点击编辑
-    handleEdit(index, row) {
-      this.idx = index;
-      const item = this.data[index];
-      this.from = {
+    // // 点击删除
+    // handleDelete(index, row) {
+    //   console.log(index);
+    //   this.idx = index;
+    //   this.delVisible = true;
+    // },
+    // 点击重命名
+    handleNewname(idx, sco) {
+      this.idx = idx;
+      const item = this.data[idx];
+      this.rename = {
         csentence: item.csentence,
-        name: item.name,
-        data: item.date,
-        address: item.address
+        name: item.name
       };
-      this.editVisible = true;
+      this.resetName = true;
     },
-    // 保存编辑
-    saveEdit() {
-      this.$set(this.data, this.idx, this.from);
-      this.editVisible = false;
-      this.$message.success(`修改第 ${this.idx + 1} 行成功`);
+    // 确定重命名
+    saveNewname() {
+      console.log(this.idx);
+      this.$set(this.data, this.idx, this.rename);
+      this.resetName = false;
     },
-    // 确定删除
-    deleteRow() {
-      this.data.splice(this.idx, 1);
-      this.$message.success("删除成功");
-      this.delVisible = false;
-    },
-    // 全部删除
-    deleteAll() {
-      console.log(this.choseData.length);
-      if (this.choseData.length == 0) {
-        this.$message.warning("请选择删除目标");
-      } else {
-        this.$message.success("删除成功");
-      }
-      this.del_list = this.del_list.concat(this.choseData);
-      this.choseData = [];
+    // // 点击编辑
+    handleEdit() {
+      this.$router.push('/clientDetail')
     }
+
+    // // 确定删除
+    // deleteRow() {
+    //   this.data.splice(this.idx, 1);
+    //   this.$message.success("删除成功");
+    //   this.delVisible = false;
+    // },
+    // // 全部删除
+    // deleteAll() {
+    //   console.log(this.choseData.length);
+    //   if (this.choseData.length == 0) {
+    //     this.$message.warning("请选择删除目标");
+    //   } else {
+    //     this.$message.success("删除成功");
+    //   }
+    //   this.del_list = this.del_list.concat(this.choseData);
+    //   this.choseData = [];
+    // }
   }
 };
 </script>

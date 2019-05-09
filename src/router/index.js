@@ -10,6 +10,8 @@ import first from '@/components/pages/first/first'
 
 // 数据看板文件
 import databoard from '@/components/pages/databoard/databoard';
+// 客户详情页
+import clientDetail from '@/components/common/clientDetail.vue';
 // 数据分析  子页面
 import Report from '@/components/pages/dataAnalysis/Report';
 import Permission from '@/components/pages/dataAnalysis/Permission';
@@ -57,6 +59,9 @@ import Workorder from '@/components/pages/service/Workorder'
 import myCompetitor from '@/components/pages/myCompetitor'
 import myObject from '@/components/pages/myObject'
 import CRMinformation from '@/components/pages/CRMinformation'
+
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -331,6 +336,13 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+       path:'/clientDetail',
+       component:clientDetail,
+       meta:{
+         title:'客户详情页'
+       }
     },
     {
       path: '/login',
