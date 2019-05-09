@@ -6,7 +6,9 @@
         <span>信息报表</span>
         <img class="dataAnalysis_icon" src="../../../assets/icon/mark.png" alt>
       </div>
-      <!-- <div class="dataAnalysis_sea">
+
+
+      <div class="dataAnalysis_sea">
         <el-input placeholder="搜索图表" prefix-icon="el-icon-search" v-model="input2"></el-input>
       </div>
       <div class="dataAnalysis_setting">
@@ -24,7 +26,7 @@
             <el-dropdown-item>新建全部统计图</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-      </div>-->
+      </div>
     </div>
     <el-col :span="24" style="padding-bottom:0px">
       <el-form :model="filters" :inline="true">
@@ -109,9 +111,7 @@
 
           <!-- 带文件夹信息 -->
           <!-- <el-table-column prop="csentence" label="信息" sortable width="250"></el-table-column> -->
-          <template>
-
-          </template>
+          <template></template>
           <el-table-column prop="name" label="人物" sortable width="150"></el-table-column>
           <el-table-column prop="date" label="时间" sortable width="200"></el-table-column>
           <el-table-column prop="address" label="描述" sortable></el-table-column>
@@ -311,7 +311,7 @@ export default {
           this.addVisible = false;
           this.data.pop();
           this.data.unshift(this.addfromm);
-          this.$message.success('添加成功')
+          this.$message.success("添加成功");
         }
       });
     },
@@ -345,7 +345,7 @@ export default {
     },
     // 点击删除
     handleDelete(index, row) {
-      console.log(index)
+      console.log(index);
       this.idx = index;
       this.delVisible = true;
     },
@@ -369,17 +369,16 @@ export default {
     },
     // 确定删除
     deleteRow() {
-
       this.data.splice(this.idx, 1);
       this.$message.success("删除成功");
       this.delVisible = false;
     },
     // 全部删除
     deleteAll() {
-      console.log(this.choseData.length)
-      if(this.choseData.length == 0){
-         this.$message.warning("请选择删除目标")
-      }else{
+      console.log(this.choseData.length);
+      if (this.choseData.length == 0) {
+        this.$message.warning("请选择删除目标");
+      } else {
         this.$message.success("删除成功");
       }
       this.del_list = this.del_list.concat(this.choseData);
@@ -393,6 +392,10 @@ export default {
 /* 报表头部区域 */
 .dataAnalysis {
   background-color: #fff;
+}
+.dataAnalysis_sea{
+  display: flex;
+  align-items: center;
 }
 .dataAnalysis_head {
   font-size: 18px;

@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store.js'
 // 引入清除默认样式文件
 import '@/style/reset.css'
 import '@/style/border.css'
@@ -70,7 +71,8 @@ new Vue({
   router,
   components: {
     App,
-    login
+    login,
+    store
   },
   template: '<App/>'
 })

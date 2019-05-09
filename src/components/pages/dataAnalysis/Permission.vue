@@ -1,5 +1,5 @@
 <template>
-  <div class="dataAnalysis">
+  <div class="dataAnalysis" row-key="id">
     <!-- 报表头部区域 -->
     <div class="dataAnalysis_head">
       <div class="dataAnalysis_tit">
@@ -44,7 +44,7 @@
           <el-table-column type="selection" width="55" align="center"></el-table-column>
           <!-- 带文件夹信息 -->
           <!-- <el-table-item> -->
-          <el-table-column label="文件" sortable width="250">
+          <el-table-column label="文件" sortable width="250" row-key="id">
             <template slot-scope="scope">
               <img
                 v-if="scope.row.children"
@@ -58,9 +58,11 @@
               >
               <span
                 style="margin-left: 5px;font-size:14px;line-height: 23px;"
+                ref="badname"
               >{{ scope.row.csentence }}</span>
             </template>
           </el-table-column>
+
           <!-- </el-table-item> -->
           <el-table-column prop="name" label="姓名" sortable width="150"></el-table-column>
           <el-table-column prop="date" label="时间" sortable width="200"></el-table-column>
@@ -71,6 +73,7 @@
               <el-button
                 v-if="(scope.row.children)"
                 type="text"
+                row-key="id"
                 icon="el-icon-edit"
                 @click="handleNewname(scope.$index ,scope )"
               >重命名</el-button>
@@ -87,16 +90,16 @@
     </div>
 
     <!--  /------------------/  重命名弹出框  /----------------------/-->
-    <el-dialog title="重命名" :visible.sync="resetName" width="30%">
-      <el-form ref="rename" :model="rename" label-width="100px">
+    <el-dialog title="重命名" :visible.sync="resetName" width="30%" row-key="id">
+      <el-form ref="rename" :model="rename" label-width="100px" row-key="id">
         <!-- 重命名 -->
-        <el-form-item label="修改名称">
+        <el-form-item label="修改名称:">
           <el-input v-model="rename.csentence"></el-input>
         </el-form-item>
 
-        <!-- 调整修改人 -->
-        <el-form-item class="needmodify" label="修改人">
-          <el-input v-model="rename.name"></el-input>
+        <!-- 调整修改描述 -->
+        <el-form-item class="needmodify" label="修改描述:">
+          <el-input type="textarea" v-model="rename.address"></el-input>
         </el-form-item>
 
         <!-- 进行确认事件 -->
@@ -104,6 +107,15 @@
       <span slot="footer" class="dialog-footer">
         <el-button @click="resetName = false">取 消</el-button>
         <el-button type="primary" @click.native="saveNewname">确 定</el-button>
+      </span>
+    </el-dialog>
+
+    <!-- ////////////////删除提示框/////////////////// -->
+    <el-dialog title="提示" :visible.sync="delVisible" width="300px" center>
+      <div class="del-dialog-cnt">删除不可恢复，是否确定删除？</div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="delVisible = false">取 消</el-button>
+        <el-button type="primary" @click="deleteRow">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -135,7 +147,10 @@ export default {
       },
       rename: {
         csentence: "",
-        name: ""
+        address: "",
+        name: "",
+        date: "",
+        children: ""
       }
     };
   },
@@ -203,39 +218,44 @@ export default {
     handleSelectionChange(val) {
       this.multipleSelection = val;
     },
-    // // 点击删除
-    // handleDelete(index, row) {
-    //   console.log(index);
-    //   this.idx = index;
-    //   this.delVisible = true;
-    // },
+
     // 点击重命名
     handleNewname(idx, sco) {
-      this.idx = idx;
-      const item = this.data[idx];
-      this.rename = {
-        csentence: item.csentence,
-        name: item.name
-      };
-      this.resetName = true;
+      // const newData = [];
+      // this.data.map((item, index) => {
+      //   return newData.push(this.data[index]);
+      // });
+      // // console.log(newData);
+      // this.idx = idx;
+      // const item = this.data[idx];
+      // this.rename = {
+      //   csentence: item.csentence,
+      //   address: item.address,
+      //   name: item.name,
+      //   date: item.date,
+      //   children: item.children
+      // };
+      this.$message.warning("功能还没实现");
+      // this.resetName = true;
     },
     // 确定重命名
     saveNewname() {
-      console.log(this.idx);
-      this.$set(this.data, this.idx, this.rename);
-      this.resetName = false;
+      // this.$set(this.tableData2, this.idx, this.rename);
+      // this.resetName = false;
     },
-    // // 点击编辑
+    // // 点击编辑 ------------跳转编辑客户页面
     handleEdit() {
-      this.$router.push('/clientDetail')
-    }
-
+      this.$router.push("/clientDetail");
+    },
+    // // 点击删除
+    handleDelete(index, row) {
+      this.delVisible = true;
+    },
     // // 确定删除
-    // deleteRow() {
-    //   this.data.splice(this.idx, 1);
-    //   this.$message.success("删除成功");
-    //   this.delVisible = false;
-    // },
+    deleteRow() {
+      this.tableData2.splice(1, 1);
+      this.delVisible = false;
+    }
     // // 全部删除
     // deleteAll() {
     //   console.log(this.choseData.length);
