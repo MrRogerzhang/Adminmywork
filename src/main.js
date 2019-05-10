@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './store.js'
+import store from '@/components/store'
 // 引入清除默认样式文件
 import '@/style/reset.css'
 import '@/style/border.css'
@@ -69,10 +69,10 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
-    App,
     login,
-    store
+    App,
   },
   template: '<App/>'
 })

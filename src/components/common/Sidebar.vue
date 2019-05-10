@@ -250,8 +250,8 @@ export default {
         },
         {
           icon: "el-icon-s-marketing",
-          index: "myCompetitor",
-          title: "竞争对手"
+          index: "shopping",
+          title: "购物车"
         }
       ]
     };

@@ -361,6 +361,13 @@ export default new Router({
       meta: {
         title: '403'
       }
+    },
+    {
+      path:'/shopping',
+      component: resolve=>require(['@/components/common/Shopping/ShoppingApp.vue'] , resolve),
+      meta:{
+        title:'购物车'
+      }
     }
   ]
 })
