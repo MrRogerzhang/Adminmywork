@@ -83,7 +83,7 @@ export default {
             },
             {
               index: "Subscription",
-              title: "订阅管理"
+              title: "文件上传"
             },
             {
               index: "Reportlog",
