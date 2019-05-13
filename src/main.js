@@ -1,19 +1,26 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import store from '@/components/store'
-// 引入清除默认样式文件
+// // 引入elementui 主题
+import 'element-ui/lib/theme-chalk/index.css';
 import '@/style/reset.css'
 import '@/style/border.css'
-// import '@/assets/love.js'
+import "@/assets/css/main.css";
+/*深色主题*/
+import "@/assets/css/color-dark.css";
+// 浅绿色主题*
+// import "./assets/css/theme-green/color-green.css";
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+// 引入清除默认样式文件
+import '@/assets/love.js'
 // // 引入axios
 // import axios from 'axios'
 // // 引入elementui
 import ElementUI from 'element-ui'
 import 'babel-polyfill'
 // // 引入安装折线图所需组件
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import store from '@/components/store'
 import VCharts from 'v-charts';
 import VeLine from 'v-charts/lib/line.common'
 
@@ -25,8 +32,6 @@ import '@/components/common/directives.js'
 Vue.use(ElementUI, {
   size: 'small'
 });
-// // 引入elementui 主题
-import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(VCharts);
 Vue.component(VeLine.name, VeLine)
 

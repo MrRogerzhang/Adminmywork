@@ -26,3 +26,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## first 为首页
 ## databoard  数据看板
 ## dataAnalysis 数据分析
+
+
