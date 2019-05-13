@@ -27,4 +27,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## databoard  数据看板
 ## dataAnalysis 数据分析
 
+![图片](./README/1.png)
+![图片](./README/2.png)
+![图片](./README/3.png)
+![图片](./README/4.png)
+![图片](./README/5.png)
+![图片](./README/6.png)
+![图片](./README/7.png)
+
 
