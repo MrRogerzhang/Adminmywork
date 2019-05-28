@@ -3,6 +3,7 @@ import * as types from './mutation-types'
 
 export default {
   [types.SET_PRODUCTS](state, products) {
+
     state.all = products
   },
 

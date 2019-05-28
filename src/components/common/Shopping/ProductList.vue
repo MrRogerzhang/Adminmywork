@@ -4,7 +4,6 @@
     <li class="row">
       <div v-for="(th ,i) in theader" :key="i">{{th}}</div>
     </li>
-
     <!-- 商品总量 -->
     <li class="row" v-for="product in currentProducts" :key="product.id">
       <div>{{product.title}}</div>
@@ -19,6 +18,8 @@
 
 
 <script>
+// vue 提供了mapGetters  和 mapActions 方法
+// mapGetters : 处于getter 中 ， 为 getter 的辅助函数 ， 仅仅是将store 中的 getter
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -47,7 +48,7 @@ export default {
     allProducts: {
     // mutations中  handler为回调函数
       handler(val) {
-        this.currentProducts = JSON.parse(JSON.stringify(this.allProducts))
+        this.currentProducts = JSON.parse(JSON.stringify(val))
       }
     }
   }
@@ -64,6 +65,8 @@ export default {
 .row {
   list-style: none;
   display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .row.header {
   font-size: large;

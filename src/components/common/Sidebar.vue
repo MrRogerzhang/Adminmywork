@@ -246,7 +246,7 @@ export default {
         {
           icon: "el-icon-s-custom",
           index: "myObject",
-          title: "人员"
+          title: "todoList"
         },
         {
           icon: "el-icon-s-marketing",

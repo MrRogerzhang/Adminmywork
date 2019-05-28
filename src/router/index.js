@@ -325,7 +325,7 @@ export default new Router({
           path: 'myObject',
           component:  resolve => require(['@/components/pages/myObject'], resolve),
           meta: {
-            title: '人员'
+            title: 'todoList'
           }
         },
         {

@@ -20,7 +20,7 @@ import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from '@/components/store'
+import store from '@/components/store/index.js'
 import VCharts from 'v-charts';
 import VeLine from 'v-charts/lib/line.common'
 
@@ -74,7 +74,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
-  store,
+  store: store,
   components: {
     login,
     App,

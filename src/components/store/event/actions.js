@@ -7,9 +7,11 @@ export default {
     commit
   }) {
     shop.getProducts((res) => {
+
       const newRes = res.map(p => Object.assign({}, p, {
         quantity: 0
       }))
+      // actions 中调用commit 方法 传到mutation 中
       commit(types.SET_PRODUCTS, newRes)
     })
   },
@@ -17,6 +19,7 @@ export default {
   setProducts({
     commit
   }, products) {
+      // actions 中调用commit 方法 传到mutation 中
     commit(types.SET_PRODUCTS, products)
   },
 
@@ -25,5 +28,4 @@ export default {
   }) {
     commit(types.CLEAR_CART_PRODUCTS)
   }
-
 }
