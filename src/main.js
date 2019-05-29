@@ -28,7 +28,8 @@ import login from '@/components/pages/login';
 import untils from '@/untils/untils'
 // 弹框拖拽属性
 import '@/components/common/directives.js'
-import store from '@/store/index.js'
+import store from './store/index'
+// import store from './store'
 Vue.use(ElementUI, {
   size: 'small'
 });

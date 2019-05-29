@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import todolist from './todolist'
-
-
-
-
 Vue.use(Vuex)
+
+
+import event from './event/index'
+
+
 export default new Vuex.Store({
   modules: {
-    todolist
+    event
   }
 })

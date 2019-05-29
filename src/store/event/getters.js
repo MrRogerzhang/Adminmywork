@@ -1,15 +1,25 @@
-export default {
-  // 总商品列表
-  allProducts: state => state.all,
+ export default {
+   getToDo(state) {
+     // 函数执行直接返回
+     return state.event.filter((item) => {
+       if (item.type == 1) {
+         return item
+       }
+     })
+   },
+   getDone(state) {
+     return state.event.filter((item) => {
+       if (item.type == 2) {
+         return item
+       }
+     })
+   },
+   getCancel(state) {
+     return state.event.filter((item) => {
+       if (item.type == 3) {
+         return item
+       }
+     })
+   },
 
-  // 购物车商品列表
-  cartProducts: (state, getters) => (getters.allProducts.filter(p => p.quantity)),
-
-  // 购物车商品总价
-  cartTotalPrice:(state , getters)=>{
-    return getters.cartProducts.reduce((total , product)=>{
-      return total+ product.price * product.quantity
-    })
-  }
-
-}
+ }

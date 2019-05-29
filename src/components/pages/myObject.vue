@@ -85,16 +85,22 @@ export default {
   },
   computed: {
     // 获取未完成数据
-    getToDo() {},
+    getToDo() {
+      return this.$store.getters.getToDo;
+    },
     // 获取已完成数据
-    getCancel() {},
+    getCancel() {
+      return this.$store.getters.getCancel;
+    },
     // 获取已取消数据
-    getDone() {}
+    getDone() {
+      return this.$store.getters.getDone;
+    }
   },
   methods: {
     // 点击提交时，执行性Store
     submit(e) {
-      let that = this,
+      let self = this,
         // 定义发送的初始数据
         params = {
           id: 0,
@@ -102,11 +108,13 @@ export default {
           content: "",
           time: ""
         };
-      that.content = that.content.trim();
-      if (that.content) {
-        params.content = that.content;
-        that.$store.dispatch("addevent", params);
-        that.content = "";
+      self.content = self.content.trim();
+      if (self.content) {
+        params.content = self.content;
+        self.$store.dispatch("addevent", params);
+        self.content = "";
+      } else {
+        console.log("没有内容，请输入内容");
       }
     },
     changeCollapse(num, event) {
@@ -147,7 +155,10 @@ export default {
     // 进入已完成
     moveToDone() {},
     // 进入到已取消
-    moveCancel() {},
+    moveCancel(id) {
+      // 执行取消事件
+      this.$store.dispatch("moveCancel", id);
+    },
     // 回到未完成
     moveToDo() {}
   }
