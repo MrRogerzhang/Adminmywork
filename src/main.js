@@ -20,7 +20,6 @@ import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from '@/components/store/index.js'
 import VCharts from 'v-charts';
 import VeLine from 'v-charts/lib/line.common'
 
@@ -29,6 +28,7 @@ import login from '@/components/pages/login';
 import untils from '@/untils/untils'
 // 弹框拖拽属性
 import '@/components/common/directives.js'
+import store from '@/store/index.js'
 Vue.use(ElementUI, {
   size: 'small'
 });
@@ -74,7 +74,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
-  store: store,
+  store,
   components: {
     login,
     App,

@@ -94,18 +94,18 @@ export default {
   methods: {
     // 点击提交时，执行性Store
     submit(e) {
-      let that = this;
-      // 定义发送的初始数据
-      const param = {
-        id: 0,
-        type: 1,
-        content: "",
-        time: ""
-      };
+      let that = this,
+        // 定义发送的初始数据
+        params = {
+          id: 0,
+          type: 1,
+          content: "",
+          time: ""
+        };
       that.content = that.content.trim();
       if (that.content) {
-        param.content = that.content;
-        that.$store.dispatch("addevent", param);
+        params.content = that.content;
+        that.$store.dispatch("addevent", params);
         that.content = "";
       }
     },
