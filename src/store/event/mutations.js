@@ -31,5 +31,22 @@ export default {
       }
     }
     return state.event.unshift(item)
+  },
+
+
+
+
+  // 恢复至未完成
+
+  [type.MOVETODO](state, id) {
+    for (var i = 0; i < state.event.length; i++) {
+      console.log(id.id)
+      if (state.event[i].id = id.id) {
+        state.event[i].type = 1
+        var item = state.event[i]
+        state.event.splice(i, 1)
+      }
+    }
+    return state.event.unshift(item)
   }
 }

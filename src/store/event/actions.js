@@ -1,6 +1,6 @@
 export default {
 
-    // 新增事件
+  // 新增事件
   addevent: ({
     commit
   }, param) => commit('ADDEVENT', {
@@ -12,5 +12,11 @@ export default {
     commit
   }, param) => commit('MOVECANCEL', {
     id: param
-  })
+  }),
+
+  moveToDo: ({ commit }, param) => {
+    commit('MOVETODO', {
+      id: param
+    })
+  }
 }

@@ -160,7 +160,9 @@ export default {
       this.$store.dispatch("moveCancel", id);
     },
     // 回到未完成
-    moveToDo() {}
+    moveToDo(id) {
+      this.$store.dispatch("moveToDo" , id)
+    }
   }
 };
 </script>

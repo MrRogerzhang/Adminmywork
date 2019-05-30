@@ -4,3 +4,5 @@
 export const ADDEVENT = 'ADDEVENT'
 // 取消
 export const MOVECANCEL = 'MOVECANCEL'
+
+export const MOVETODO = 'MOVETODO'
