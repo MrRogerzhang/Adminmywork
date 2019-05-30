@@ -1,7 +1,4 @@
-import * as type from './mutaion-types'
-import {
-  stat
-} from 'fs';
+import * as type from './mutaion-types';
 
 export default {
   [type.ADDEVENT](states, obj) {
@@ -40,8 +37,7 @@ export default {
 
   [type.MOVETODO](state, id) {
     for (var i = 0; i < state.event.length; i++) {
-      console.log(id.id)
-      if (state.event[i].id = id.id) {
+      if (state.event[i].id == id.id) {
         state.event[i].type = 1
         var item = state.event[i]
         state.event.splice(i, 1)
@@ -49,4 +45,11 @@ export default {
     }
     return state.event.unshift(item)
   }
+
+
+
+
+
+
+
 }
