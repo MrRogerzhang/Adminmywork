@@ -153,7 +153,9 @@ export default {
     },
 
     // 进入已完成
-    moveToDone() {},
+    moveToDone(id) {
+      this.$store.dispatch('moveToDone', id)
+    },
     // 进入到已取消
     moveCancel(id) {
       // 执行取消事件

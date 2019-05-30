@@ -14,8 +14,18 @@ export default {
     id: param
   }),
 
-  moveToDo: ({ commit }, param) => {
+  moveToDo: ({
+    commit
+  }, param) => {
     commit('MOVETODO', {
+      id: param
+    })
+  },
+
+  moveToDone: ({
+    commit
+  }, param) => {
+    commit('MOVETODONE', {
       id: param
     })
   }

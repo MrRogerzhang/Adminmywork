@@ -44,9 +44,12 @@ export default {
       }
     }
     return state.event.unshift(item)
+  },
+
+  [type.MOVETODONE](state, id) {
+    console.log(state)
+    console.log(id)
   }
-
-
 
 
 
