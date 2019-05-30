@@ -42,7 +42,7 @@ export default {
   methods: {
     currentProducts() {
       // 因为数据是要变化的----getters
-      return this.$store.getters.currentProducts;
+      // return this.$store.getters.currentProducts;
     }
   }
 };

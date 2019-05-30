@@ -1,6 +1,5 @@
 export default {
-  currentProducts() {
-    title: '三星'
-
+  currentProducts(state) {
+    console.log(state)
   }
 }

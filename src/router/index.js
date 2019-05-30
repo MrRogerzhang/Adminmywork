@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import page403 from '@/components/pages/403'
-import test from '@/router/test'
+// import test from '@/router/test'
 // import home from '@/components/common/home'
 // import login from '@/components/pages/login'
 
@@ -351,10 +351,7 @@ export default new Router({
         title: '登录页面'
       }
     },
-    {
-      path: '/test',
-      component: test
-    },
+   
     {
       path: '/403',
       component: page403,
