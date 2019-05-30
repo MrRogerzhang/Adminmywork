@@ -10,7 +10,12 @@
       <div>{{product.price }}</div>
       <div>{{product.inventory - product.quantity }}</div>
       <div>
-        <el-input-number :min="0"  :max="product.inventory" v-model='product.quantoty' @change="handleChange"></el-input-number>
+        <el-input-number
+          :min="0"
+          :max="product.inventory"
+          v-model="product.quantoty"
+          @change="handleChange"
+        ></el-input-number>
       </div>
     </li>
   </ul>
@@ -20,7 +25,7 @@
 <script>
 // vue 提供了mapGetters  和 mapActions 方法
 // mapGetters : 处于getter 中 ， 为 getter 的辅助函数 ， 仅仅是将store 中的 getter
-import { mapGetters, mapActions } from "vuex";
+// import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
@@ -29,10 +34,10 @@ export default {
       currentProducts: []
     };
   },
-    computed: {
-      // 解构对象，  得到allProducts
-      ...mapGetters(["allProducts"])
-    },
+  computed: {
+    // 解构对象，  得到allProducts
+    // ...mapGetters(["allProducts"])
+  },
   created() {
     // 页面创建时， 定义一个获取所有的商品方法
     this.getAllProducts();
@@ -40,15 +45,15 @@ export default {
   methods: {
     handleChange() {
       this.setProducts(this.currentProducts);
-    },
-    ...mapActions(["getAllProducts", "setProducts"])
+    }
+    // ...mapActions(["getAllProducts", "setProducts"])
   },
 
   watch: {
     allProducts: {
-    // mutations中  handler为回调函数
+      // mutations中  handler为回调函数
       handler(val) {
-        this.currentProducts = JSON.parse(JSON.stringify(val))
+        this.currentProducts = JSON.parse(JSON.stringify(val));
       }
     }
   }
