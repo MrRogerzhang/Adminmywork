@@ -98,19 +98,19 @@ export default {
         {
           icon: "el-icon-pie-chart",
           index: "market",
-          title: "市场及线索管理",
+          title: "组件",
           subs: [
             {
               index: "Activity",
-              title: "市场活动"
+              title: "富文本编辑器"
             },
             {
               index: "Sale",
-              title: "销售线索"
+              title: "Markdown"
             },
             {
               index: "Clue",
-              title: "线索池"
+              title: "可拖拽看板"
             }
           ]
         },

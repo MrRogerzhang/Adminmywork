@@ -20,12 +20,12 @@
             <el-table-column prop="date" width="180"></el-table-column>
             <el-table-column width="120">
               <template slot-scope="scope">
-                <el-button size="small" @click="handleRead(scope.$index)">标为已读</el-button>
+                <el-button size="small" @click="handleRead(scope.$index)"  >标为已读</el-button>
               </template>
             </el-table-column>
           </el-table>
           <div class="handle-row">
-            <el-button type="primary" @click="handleRead_all">全部标为已读</el-button>
+            <el-button type="primary"   @click="handleRead_all">全部标为已读</el-button>
           </div>
         </el-tab-pane>
         <el-tab-pane :label="`已读消息(${read.length})`" name="second">
@@ -44,7 +44,7 @@
               </el-table-column>
             </el-table>
             <div class="handle-row">
-              <el-button type="danger" @click="handleDel_all">删除全部</el-button>
+              <el-button type="danger"   @click="handleDel_all">删除全部</el-button>
             </div>
           </template>
         </el-tab-pane>
@@ -64,7 +64,7 @@
               </el-table-column>
             </el-table>
             <div class="handle-row">
-              <el-button type="danger" @click="handleRestore_all">清空回收站</el-button>
+              <el-button type="danger"   @click="handleRestore_all">清空回收站</el-button>
             </div>
           </template>
         </el-tab-pane>
@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import waves from "@/directive/waves/index.js";
 export default {
   name: "tabs",
   data() {
@@ -104,6 +105,9 @@ export default {
         }
       ]
     };
+  },
+  directives: {
+    waves
   },
   created() {},
   methods: {

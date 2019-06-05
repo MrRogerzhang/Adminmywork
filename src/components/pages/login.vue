@@ -54,14 +54,15 @@ export default {
   },
   methods: {
     submitForm(formName) {
-      //     this.$refs[formName].validate((valid) => {
-      //         if (valid) {
-      //             localStorage.setItem('ms_username',this.ruleForm.username);
-      //             this.$router.push('/login');
-      //         } else {
-      //             return false;
-      //         }
-      //     });
+      // let ruleForm = JSON.parse(JSON.stringify(this.ruleForm));
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          localStorage.setItem("ms_username", this.ruleForm.username);
+          this.$router.push("/");
+        } else {
+          return false;
+        }
+      });
 
       // this.$store
       //   .dispatch("LoginByUsername", this.loginForm)
