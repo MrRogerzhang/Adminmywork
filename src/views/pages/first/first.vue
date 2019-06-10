@@ -48,7 +48,7 @@
 
 
 <script>
-import BackToTop from "@/components/common/BackToTop";
+import BackToTop from "@/components/BackToTop";
 import VSales from "./sales.vue";
 import VRank from "./rank.vue";
 import VLeadconversion from "./Leadconversion.vue";

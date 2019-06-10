@@ -105,7 +105,7 @@ export default new Router({
         },
         {
           path: 'Subscription',
-          component:  resolve => require(['@/views/pages/dataAnalysis/Subscription'], resolve),
+          component: resolve => require(['@/views/pages/dataAnalysis/Subscription'], resolve),
           meta: {
             title: '可移动的dialog'
           }
@@ -126,7 +126,7 @@ export default new Router({
         },
         {
           path: 'Activity',
-          component:resolve => require(['@/views/pages/market/Activity'], resolve),
+          component: resolve => require(['@/views/pages/market/Activity'], resolve),
           meta: {
             title: '市场活动'
           }
@@ -134,22 +134,21 @@ export default new Router({
         // zujian
         {
           path: 'Clue',
-          component:resolve => require(['@/views/pages/market/Clue'], resolve),
+          component: resolve => require(['@/views/pages/market/Clue'], resolve),
           meta: {
             title: '线索池'
           }
         },
         {
           path: 'Zujian',
-          component:resolve => require(['@/views/pages/market/Zujian'], resolve),
+          component: resolve => require(['@/views/pages/market/Zujian'], resolve),
           meta: {
             title: '线索池'
           }
-        },
-        ,
+        }, ,
         {
           path: 'Backtotop',
-          component:resolve => require(['@/views/pages/market/Backtotop'], resolve),
+          component: resolve => require(['@/views/pages/market/Backtotop'], resolve),
           meta: {
             title: '线索池'
           }
@@ -157,7 +156,7 @@ export default new Router({
         // backtotop
         {
           path: 'Sale',
-          component:resolve => require(['@/views/pages/market/Sale'], resolve),
+          component: resolve => require(['@/views/pages/market/Sale'], resolve),
           meta: {
             title: '销售线索'
           }
@@ -178,7 +177,7 @@ export default new Router({
         },
         {
           path: 'Client_son',
-          component:resolve => require(['@/views/pages/client/Client_son'], resolve),
+          component: resolve => require(['@/views/pages/client/Client_son'], resolve),
           meta: {
             title: '客户'
           }
@@ -228,49 +227,49 @@ export default new Router({
         },
         {
           path: 'Contract',
-          component:  resolve => require(['@/views/pages/Order/Contract'], resolve),
+          component: resolve => require(['@/views/pages/Order/Contract'], resolve),
           meta: {
             title: '合同'
           }
         },
         {
           path: 'Payment',
-          component:  resolve => require(['@/views/pages/Order/Payment'], resolve),
+          component: resolve => require(['@/views/pages/Order/Payment'], resolve),
           meta: {
             title: '回款'
           }
         },
         {
           path: 'Paymentdetail',
-          component:  resolve => require(['@/views/pages/Order/Paymentdetail'], resolve),
+          component: resolve => require(['@/views/pages/Order/Paymentdetail'], resolve),
           meta: {
             title: '回款明细'
           }
         },
         {
           path: 'Paymentplan',
-          component:  resolve => require(['@/views/pages/Order/Paymentplan'], resolve),
+          component: resolve => require(['@/views/pages/Order/Paymentplan'], resolve),
           meta: {
             title: '回款计划'
           }
         },
         {
           path: 'Priceindicatesfine',
-          component:  resolve => require(['@/views/pages/Order/Priceindicatesfine'], resolve),
+          component: resolve => require(['@/views/pages/Order/Priceindicatesfine'], resolve),
           meta: {
             title: '价目表明细'
           }
         },
         {
           path: 'Pricelist',
-          component:   resolve => require(['@/views/pages/Order/Pricelist'], resolve),
+          component: resolve => require(['@/views/pages/Order/Pricelist'], resolve),
           meta: {
             title: '价目表'
           }
         },
         {
           path: 'Refund',
-          component:  resolve => require(['@/views/pages/Order/Refund'], resolve),
+          component: resolve => require(['@/views/pages/Order/Refund'], resolve),
           meta: {
             title: '退款'
           }
@@ -284,7 +283,7 @@ export default new Router({
         },
         {
           path: 'Salesorder',
-          component:  resolve => require(['@/views/pages/Order/Salesorder'], resolve),
+          component: resolve => require(['@/views/pages/Order/Salesorder'], resolve),
           meta: {
             title: '销售订单'
           }
@@ -305,7 +304,7 @@ export default new Router({
         },
         {
           path: 'Specification',
-          component:  resolve => require(['@/views/pages/product/Specification'], resolve),
+          component: resolve => require(['@/views/pages/product/Specification'], resolve),
           meta: {
             title: '规格'
           }
@@ -340,7 +339,7 @@ export default new Router({
         },
         {
           path: 'myObject',
-          component:  resolve => require(['@/views/pages/myObject'], resolve),
+          component: resolve => require(['@/views/pages/myObject'], resolve),
           meta: {
             title: 'todoList'
           }
@@ -356,31 +355,24 @@ export default new Router({
     },
     {
       path: '/clientDetail',
-      component:  resolve => require(['@/layout/common/clientDetail.vue'], resolve),
+      component: resolve => require(['@/layout/common/clientDetail.vue'], resolve),
       meta: {
         title: '客户详情页'
       }
     },
     {
       path: '/login',
-      component:   resolve => require(['@/views/pages/login'], resolve),
+      component: resolve => require(['@/views/pages/login'], resolve),
       meta: {
         title: '登录页面'
       }
     },
-   
+
     {
       path: '/403',
       component: page403,
       meta: {
         title: '403'
-      }
-    },
-    {
-      path:'/shopping',
-      component: resolve=>require(['@/layout/common/Shopping/ShoppingApp.vue'] , resolve),
-      meta:{
-        title:'购物车'
       }
     }
   ]
