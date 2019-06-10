@@ -7,7 +7,6 @@
         <img class="dataAnalysis_icon" src="../../../assets/icon/mark.png" alt>
       </div>
 
-
       <div class="dataAnalysis_sea">
         <el-input placeholder="搜索图表" prefix-icon="el-icon-search" v-model="input2"></el-input>
       </div>
@@ -141,7 +140,7 @@
       </div>
     </div>
     <!--///////////////////////// 新增弹出框////////////////////////////// -->
-    <el-dialog title="新增用户" :visible.sync="addVisible" width="50%">
+    <el-dialog v-el-drag-dialog title="新增用户" :visible.sync="addVisible" width="50%">
       <el-form :model="addfromm" ref="addfromm">
         <el-form-item label="信息">
           <el-input v-model="addfromm.csentence" placeholder="信息"></el-input>
@@ -171,7 +170,7 @@
       </span>
     </el-dialog>
     <!-- //////////////////////编辑弹出框 ////////////////////-->
-    <el-dialog title="重命名" :visible.sync="editVisible" width="30%">
+    <el-dialog v-el-drag-dialog title="重命名" :visible.sync="editVisible" width="30%">
       <el-form ref="form" :model="from" label-width="100px">
         <!-- 调整日期 -->
         <el-form-item label="日期">
@@ -201,7 +200,7 @@
     </el-dialog>
 
     <!-- ////////////////删除提示框/////////////////// -->
-    <el-dialog title="提示" :visible.sync="delVisible" width="300px" center>
+    <el-dialog v-el-drag-dialog title="提示" :visible.sync="delVisible" width="300px" center>
       <div class="del-dialog-cnt">删除不可恢复，是否确定删除？</div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="delVisible = false">取 消</el-button>
@@ -229,9 +228,10 @@
 
 
 <script>
+import elDragDialog from "@/directive/el-drag-dialog"; // base on element-ui
 export default {
   //分页数据
-
+  directives: { elDragDialog },
   data() {
     return {
       total: "0",
@@ -393,7 +393,7 @@ export default {
 .dataAnalysis {
   background-color: #fff;
 }
-.dataAnalysis_sea{
+.dataAnalysis_sea {
   display: flex;
   align-items: center;
 }

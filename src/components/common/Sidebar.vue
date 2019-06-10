@@ -111,6 +111,14 @@ export default {
             {
               index: "Clue",
               title: "可拖拽看板"
+            },
+            {
+              index: "zujian",
+              title: "小组件"
+            },
+            {
+              index: "backtotop",
+              title: "返回顶部"
             }
           ]
         },

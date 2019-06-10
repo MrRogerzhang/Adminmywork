@@ -3,7 +3,7 @@
     <el-button type="primary" @click="dialogTableVisible = true">
       打开一个新的Dialog
     </el-button>
-    <el-dialog v-el-drag-dialog :visible.sync="dialogTableVisible" title="Shipping address" @dragDialog="handleDrag">
+    <el-dialog v-el-drag-dialog :visible.sync="dialogTableVisible" title="Dialog标题" @dragDialog="handleDrag">
       <el-select ref="select" v-model="value" placeholder="请选择">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
       </el-select>
@@ -42,7 +42,6 @@ export default {
     grildData(){
       this.$post('/eldralog' , {
       }).then(response =>{
-        console.log(response)
         if(response.status === 0){
           this.gridData  = response.data.gridData
         }

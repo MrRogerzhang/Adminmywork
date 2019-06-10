@@ -131,6 +131,7 @@ export default new Router({
             title: '市场活动'
           }
         },
+        // zujian
         {
           path: 'Clue',
           component:resolve => require(['@/components/pages/market/Clue'], resolve),
@@ -138,6 +139,22 @@ export default new Router({
             title: '线索池'
           }
         },
+        {
+          path: 'Zujian',
+          component:resolve => require(['@/components/pages/market/Zujian'], resolve),
+          meta: {
+            title: '线索池'
+          }
+        },
+        ,
+        {
+          path: 'Backtotop',
+          component:resolve => require(['@/components/pages/market/Backtotop'], resolve),
+          meta: {
+            title: '线索池'
+          }
+        },
+        // backtotop
         {
           path: 'Sale',
           component:resolve => require(['@/components/pages/market/Sale'], resolve),
