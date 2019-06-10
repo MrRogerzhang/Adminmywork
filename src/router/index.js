@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import page403 from '@/views/pages/403'
 // import test from '@/router/test'
-// import home from '@/components/common/home'
+// import home from '@/layout/common/home'
 // import login from '@/views/pages/login'
 
 // // 首页文件
@@ -11,7 +11,7 @@ import page403 from '@/views/pages/403'
 // // 数据看板文件
 // import databoard from '@/views/pages/databoard/databoard';
 // // 客户详情页
-// import clientDetail from '@/components/common/clientDetail.vue';
+// import clientDetail from '@/layout/common/clientDetail.vue';
 // // 数据分析  子页面
 // import Report from '@/views/pages/dataAnalysis/Report';
 // import Permission from '@/views/pages/dataAnalysis/Permission';
@@ -71,7 +71,7 @@ export default new Router({
     },
     {
       path: '/',
-      component: resolve => require(['@/components/common/home.vue'], resolve),
+      component: resolve => require(['@/layout/common/home.vue'], resolve),
       meta: {
         title: '自述文件'
       },
@@ -356,7 +356,7 @@ export default new Router({
     },
     {
       path: '/clientDetail',
-      component:  resolve => require(['@/components/common/clientDetail.vue'], resolve),
+      component:  resolve => require(['@/layout/common/clientDetail.vue'], resolve),
       meta: {
         title: '客户详情页'
       }
@@ -378,7 +378,7 @@ export default new Router({
     },
     {
       path:'/shopping',
-      component: resolve=>require(['@/components/common/Shopping/ShoppingApp.vue'] , resolve),
+      component: resolve=>require(['@/layout/common/Shopping/ShoppingApp.vue'] , resolve),
       meta:{
         title:'购物车'
       }
