@@ -2,9 +2,9 @@
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/style/reset.css'
 import '@/style/border.css'
-import "@/assets/css/main.css";
+import "@/style/css/main.css";
 /*深色主题*/
-import "@/assets/css/color-dark.css";
+import "@/style/css/color-dark.css";
 // 浅绿色主题*
 // import "./assets/css/theme-green/color-green.css";
 // The Vue build version to load with the `import` command
@@ -29,7 +29,7 @@ import router from './router'
 import VCharts from 'v-charts';
 import VeLine from 'v-charts/lib/line.common'
 
-import login from '@/components/pages/login';
+import login from '@/views/pages/login';
 // 引入untils
 import untils from '@/untils/untils'
 import store from './store/index'
