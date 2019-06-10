@@ -14,7 +14,13 @@ import "@/assets/css/color-dark.css";
 // // 引入axios
 // import axios from 'axios'
 // // 引入elementui
+
 import ElementUI from 'element-ui'
+
+
+
+// 引入SVG
+import './icons'
 import 'babel-polyfill'
 // // 引入安装折线图所需组件
 import Vue from 'vue'
