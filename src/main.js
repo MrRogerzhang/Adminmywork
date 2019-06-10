@@ -32,8 +32,6 @@ import VeLine from 'v-charts/lib/line.common'
 import login from '@/components/pages/login';
 // 引入untils
 import untils from '@/untils/untils'
-// 弹框拖拽属性
-import '@/components/common/directives.js'
 import store from './store/index'
 Vue.use(ElementUI, {
   size: 'small'
