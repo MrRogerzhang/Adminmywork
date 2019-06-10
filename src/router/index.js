@@ -107,7 +107,7 @@ export default new Router({
           path: 'Subscription',
           component:  resolve => require(['@/components/pages/dataAnalysis/Subscription'], resolve),
           meta: {
-            title: '订阅管理'
+            title: '可移动的dialog'
           }
         },
         {

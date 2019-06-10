@@ -83,7 +83,7 @@ export default {
             },
             {
               index: "Subscription",
-              title: "文件上传"
+              title: "可移动的dialog"
             },
             {
               index: "Reportlog",
