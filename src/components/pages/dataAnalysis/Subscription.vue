@@ -7,7 +7,6 @@
  
 <style lang="scss" scoped>
 .tel_line-icon{
-  margin: 5px;
-  font-size: 28px;
+  font-size: 22px;
 }
 </style>

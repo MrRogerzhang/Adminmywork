@@ -17,7 +17,8 @@
                 <div class="btn-bell">
                     <el-tooltip effect="dark" :content="message?`有${message}条未读消息`:`消息中心`" placement="bottom">
                         <router-link to="/CRMinformation">
-                            <i class="el-icon-bell"></i>
+                            <!-- <i class="el-icon-bell"></i> -->
+                            <svg-icon class-name="info-icon" icon-class='info' ></svg-icon>
                         </router-link>
                     </el-tooltip>
                     <span class="btn-bell-badge" v-if="message"></span>
@@ -160,7 +161,7 @@
         background: #f56c6c;
         color: #fff;
     }
-    .btn-bell .el-icon-bell{
+    .btn-bell .info-icon{
         color: #fff;
     }
     .user-name{
