@@ -44,7 +44,7 @@
           <el-table-column type="selection" width="55" align="center"></el-table-column>
           <!-- 带文件夹信息 -->
           <!-- <el-table-item> -->
-          <el-table-column label="文件" sortable width="250" row-key="id">
+          <el-table-column label="文件夹" sortable width="250" row-key="id">
             <template slot-scope="scope">
               <svg-icon v-if="scope.row.children" icon-class="Folder"></svg-icon>
               <svg-icon v-else icon-class="file"></svg-icon>
@@ -67,7 +67,7 @@
                 type="text"
                 row-key="id"
                 icon="el-icon-edit"
-                @click="handleNewname(scope.$index ,scope)"
+                @click="handleNewname(scope.$index ,scope.row)"
               >重命名</el-button>
               <el-button v-else type="text" icon="el-icon-edit" @click="handleEdit()">编辑</el-button>
               <el-button
@@ -81,18 +81,18 @@
       </div>
     </div>
 
-    <!--  /------------------/  重命名弹出框  /----------------------/-->
-    <el-dialog title="重命名" :visible.sync="resetName" width="30%" row-key="id">
-      <el-form ref="rename" :model="rename" label-width="100px" row-key="id">
+    <!--  /------------------/  修改文件夹名称  /----------------------/-->
+    <el-dialog title="修改文件夹名称" :visible.sync="resetName" width="50%" row-key="id">
+      <el-form ref="rename" :model="rename" label-width="130px" row-key="id">
         <!-- 重命名 -->
-        <el-form-item label="修改名称:">
+        <el-form-item label="修改文件夹名称:">
           <el-input v-model="rename.csentence"></el-input>
         </el-form-item>
 
-        <!-- 调整修改描述 -->
-        <el-form-item class="needmodify" label="修改描述:">
-          <el-input type="textarea" v-model="rename.address"></el-input>
-        </el-form-item>
+        <!-- 修改地址 -->
+        <!-- <el-form-item class="needmodify" label="修改地址:">
+          <el-input type="text" v-model="rename.address"></el-input>
+        </el-form-item>-->
 
         <!-- 进行确认事件 -->
       </el-form>
@@ -134,15 +134,17 @@ export default {
       del_list: [],
       new_list: [],
       input2: "",
+      idx: 0,
       filters: {
         name: ""
       },
       rename: {
         csentence: "",
         address: "",
-        name: "",
+        children: [],
         date: "",
-        children: ""
+        id: "",
+        name: ""
       }
     };
   },
@@ -156,7 +158,6 @@ export default {
   computed: {
     data() {
       return this.tableData2.filter(item => {
-        // console.log(item);
         return item;
       });
     }
@@ -212,12 +213,20 @@ export default {
     },
 
     // 点击重命名
-    handleNewname(idx, sco) {
+    handleNewname(index, sco) {
+      this.idx = index;
+      this.rename = {
+        csentence: sco.csentence,
+        address: sco.address,
+        children: sco.children,
+        date: sco.date,
+        id: sco.id,
+        name: sco.name
+      };
       // const newData = [];
       // this.data.map((item, index) => {
       //   return newData.push(this.data[index]);
       // });
-      // // console.log(newData);
       // this.idx = idx;
       // const item = this.data[idx];
       // this.rename = {
@@ -227,13 +236,13 @@ export default {
       //   date: item.date,
       //   children: item.children
       // };
-      this.$message.warning("功能还没实现");
-      // this.resetName = true;
+      // this.$message.warning("功能还没实现");
+      this.resetName = true;
     },
     // 确定重命名
     saveNewname() {
-      // this.$set(this.tableData2, this.idx, this.rename);
-      // this.resetName = false;
+      this.$set(this.tableData2, this.idx, this.rename);
+      this.resetName = false;
     },
     // // 点击编辑 ------------跳转编辑客户页面
     handleEdit() {
@@ -241,16 +250,18 @@ export default {
     },
     // // 点击删除
     handleDelete(index, row) {
+      this.idx = index;
+      console.log(index);
+      console.log(row);
       this.delVisible = true;
     },
     // // 确定删除
     deleteRow() {
-      this.tableData2.splice(1, 1);
+      this.tableData2.splice(this.idx, 1);
       this.delVisible = false;
     }
     // // 全部删除
     // deleteAll() {
-    //   console.log(this.choseData.length);
     //   if (this.choseData.length == 0) {
     //     this.$message.warning("请选择删除目标");
     //   } else {
