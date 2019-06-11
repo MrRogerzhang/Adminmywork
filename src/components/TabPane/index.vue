@@ -21,6 +21,12 @@
 
 <script>
 export default {
+  props: {
+    type: {
+      type: String,
+      default: "CN"
+    }
+  },
   data() {
     return {
       getElTabData: [],
@@ -29,6 +35,7 @@ export default {
     };
   },
   created() {
+    console.log(this.type)
     this.tab = this.$route.query.tab;
     // console.log(this.tab);
   },
