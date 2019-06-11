@@ -1,5 +1,5 @@
 <template>
-  <el-table v-model="routerMove">
+  <el-table>
     <!-- ID -->
     <el-table-column></el-table-column>
     <!-- Date -->
@@ -25,12 +25,12 @@ export default {
     return {
       getElTabData: [],
       tab: null,
-      routerMove:'CN'
+      routerMove: "CN"
     };
   },
   created() {
     this.tab = this.$route.query.tab;
-    console.log(this.tab);
+    // console.log(this.tab);
   },
   mounted() {
     this.getTabData();
@@ -39,14 +39,10 @@ export default {
     getTabData() {
       this.$post("/elTabpane", {}).then(respone => {
         this.getElTabData = respone.data;
-        console.log(this.getElTabData);
+        // console.log(this.getElTabData)
       });
     }
   },
-  watch: {
-    routerMove(val) {
-        console.log(val)
-    }
-  }
+  watch: {}
 };
 </script>
