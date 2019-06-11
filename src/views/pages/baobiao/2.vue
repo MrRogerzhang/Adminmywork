@@ -4,7 +4,7 @@
     <el-tabs type="border-card" @tab-click="handleClick" style="margin-top:15px;">
       <el-tab-pane v-for="item in ElTab" :key="item.key" :label="item.title" :name="item.key"></el-tab-pane>
       <keep-alive>
-        <tab-pane :type="item.key" @create="showCreatedTimes"></tab-pane>
+        <tab-pane   @create="showCreatedTimes"></tab-pane>
       </keep-alive>
     </el-tabs>
   </el-col>
@@ -46,6 +46,7 @@ export default {
   methods: {
     handleClick(tab, event) {
       this.type = tab.name;
+      // console.log(this.type)
     },
     showCreatedTimes() {
       this.createdTimes = this.createdTimes + 1;

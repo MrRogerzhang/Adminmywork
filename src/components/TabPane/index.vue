@@ -35,7 +35,7 @@ export default {
     };
   },
   created() {
-    console.log(this.type)
+    // console.log(this.type)
     this.tab = this.$route.query.tab;
     // console.log(this.tab);
   },
