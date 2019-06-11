@@ -5,7 +5,7 @@
       <!-- 头部区域 -->
       <div class="colhead">
         <el-tag>信息报表</el-tag>
-        <svg-icon icon-class="mark" style="margin-left:10px; "></svg-icon>
+        <!-- <svg-icon icon-class="mark" style="margin-left:10px; "></svg-icon> -->
         <el-input placeholder="搜索图表" style="width:100px;display:inline-block;margin-left:200px;"></el-input>
       </div>
 

@@ -75,7 +75,7 @@
                 type="text"
                 row-key="id"
                 icon="el-icon-edit"
-                @click="handleNewname(scope.$index ,scope )"
+                @click="handleNewname(scope.$index ,scope)"
               >重命名</el-button>
               <el-button v-else type="text" icon="el-icon-edit" @click="handleEdit()">编辑</el-button>
               <el-button
