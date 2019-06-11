@@ -46,16 +46,8 @@
           <!-- <el-table-item> -->
           <el-table-column label="文件" sortable width="250" row-key="id">
             <template slot-scope="scope">
-              <img
-                v-if="scope.row.children"
-                src="https://a9.fspage.com/FSR/frontend/html/bi-dist/assets/images/folder-icon-8c81d960c0.png"
-                alt
-              >
-              <img
-                v-else
-                src="https://a9.fspage.com/FSR/frontend/html/bi-dist/assets/images/item-icon-469b5eb448.png"
-                alt
-              >
+              <svg-icon v-if="scope.row.children" icon-class="Folder"></svg-icon>
+              <svg-icon v-else icon-class="file"></svg-icon>
               <span
                 style="margin-left: 5px;font-size:14px;line-height: 23px;"
                 ref="badname"
