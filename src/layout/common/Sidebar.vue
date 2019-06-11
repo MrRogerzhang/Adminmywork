@@ -53,6 +53,28 @@ export default {
           index: "first",
           title: "首页"
         },
+        // 要修改的集中地
+        {
+          icon: "el-icon-s-order",
+          index: "1",
+          title: "报表样式大全",
+          subs: [
+            {
+              index: "bao1",
+              title: "报表1"
+            },
+              {
+              index: "bao2",
+              title: "报表2"
+            },
+              {
+              index: "bao3",
+              title: "报表3"
+            },
+          
+            
+          ]
+        },
         {
           icon: "el-icon-message-solid",
           index: "403",

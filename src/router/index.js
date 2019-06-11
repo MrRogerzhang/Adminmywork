@@ -90,6 +90,27 @@ export default new Router({
           }
         },
         {
+          path: 'bao1',
+          component: resolve => require(['@/views/pages/baobiao/1'], resolve),
+          meta: {
+            title: '报表1'
+          }
+        },
+        {
+          path: 'bao2',
+          component: resolve => require(['@/views/pages/baobiao/2'], resolve),
+          meta: {
+            title: '报表2'
+          }
+        },
+        {
+          path: 'bao3',
+          component: resolve => require(['@/views/pages/baobiao/3'], resolve),
+          meta: {
+            title: '报表3'
+          }
+        },
+        {
           path: 'Report',
           component: resolve => require(['@/views/pages/dataAnalysis/Report'], resolve),
           meta: {

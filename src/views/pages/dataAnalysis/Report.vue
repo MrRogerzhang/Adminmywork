@@ -6,10 +6,11 @@
         <span>信息报表</span>
         <img class="dataAnalysis_icon" src="../../../assets/icon/mark.png" alt>
       </div>
-
+      <!-- 搜索图表 -->
       <div class="dataAnalysis_sea">
         <el-input placeholder="搜索图表" prefix-icon="el-icon-search" v-model="input2"></el-input>
       </div>
+      <!-- 新建 -->
       <div class="dataAnalysis_setting">
         <span></span>
         <el-dropdown>
@@ -27,15 +28,17 @@
         </el-dropdown>
       </div>
     </div>
+
+    <!-- 报表内容主体区域 -->
     <el-col :span="24" style="padding-bottom:0px">
       <el-form :model="filters" :inline="true">
         <el-form-item>
           <el-input placeholder="姓名" v-model="select_word"></el-input>
         </el-form-item>
 
-        <el-form-item>
+        <!-- <el-form-item>
           <el-button type="primary">查询</el-button>
-        </el-form-item>
+        </el-form-item>-->
 
         <el-form-item>
           <el-button type="primary" @click="useradd">新增</el-button>
@@ -46,7 +49,7 @@
         </el-form-item>
       </el-form>
     </el-col>
-  
+
     <!-- 内容区域 -->
     <div class="dataAnalysis_main">
       <div class="oneData">
@@ -60,12 +63,9 @@
           @selection-change="handleSelectionChange"
           row-key="id"
         >
-          <!-- check -->
+          <!-- check选择框 -->
           <el-table-column type="selection" width="55" align="center"></el-table-column>
-
           <!-- 带文件夹信息 -->
-          <!-- <el-table-column prop="csentence" label="信息" sortable width="250"></el-table-column> -->
-          <template></template>
           <el-table-column prop="name" label="人物" sortable width="150"></el-table-column>
           <el-table-column prop="date" label="时间" sortable width="200"></el-table-column>
           <el-table-column prop="address" label="描述" sortable></el-table-column>
@@ -73,13 +73,6 @@
           <el-table-column label="操作" width="180" align="center">
             <template slot-scope="scope">
               <el-button
-                v-if="(scope.row.children)"
-                type="text"
-                icon="el-icon-edit"
-                @click="handleEdit(scope.$index, scope.row)"
-              >重命名</el-button>
-              <el-button
-                v-else
                 type="text"
                 icon="el-icon-edit"
                 @click="handleEdit(scope.$index, scope.row)"
@@ -94,7 +87,8 @@
         </el-table>
       </div>
     </div>
-    <!--///////////////////////// 新增弹出框////////////////////////////// -->
+
+    <!-- //////////////////////新增/// 新增弹出框////////////////////////////// -->
     <el-dialog v-el-drag-dialog title="新增用户" :visible.sync="addVisible" width="50%">
       <el-form :model="addfromm" ref="addfromm">
         <el-form-item label="信息">
@@ -125,7 +119,7 @@
       </span>
     </el-dialog>
     <!-- //////////////////////编辑弹出框 ////////////////////-->
-    <el-dialog v-el-drag-dialog title="重命名" :visible.sync="editVisible" width="30%">
+    <el-dialog v-el-drag-dialog title="编辑" :visible.sync="editVisible" width="30%">
       <el-form ref="form" :model="from" label-width="100px">
         <!-- 调整日期 -->
         <el-form-item label="日期">
