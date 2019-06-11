@@ -50,7 +50,7 @@
         </el-table-column>
       </el-table>
       <!-- </el-container> -->
-      <el-footer>
+      <el-footer style="margin-top:20px;">
         <template>
           <div class="block">
             <el-pagination
