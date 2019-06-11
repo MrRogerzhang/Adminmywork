@@ -46,52 +46,7 @@
         </el-form-item>
       </el-form>
     </el-col>
-    <!-- 二级头部----if--需要变化的 -->
-    <!-- <div class="dataAnalysis_content" v-if="show">
-      <span class="bi-detail__select__label">筛选</span>
-      <el-dropdown>
-        <span class="el-dropdown-link">
-          全部
-          <i class="el-icon-arrow-down el-icon--right"></i>
-        </span>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>全部</el-dropdown-item>
-          <el-dropdown-item>我创建的</el-dropdown-item>
-          <el-dropdown-item>我编辑的</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-      <span class="dataAnalysis_spe">|</span>
-      <span class="dataAnalysis_chart">图表类型:</span>
-      <el-dropdown class="dataAnalysis_need">
-        <el-button type="primary">
-          全部
-          <i class="el-icon-arrow-down el-icon--right"></i>
-        </el-button>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>全部</el-dropdown-item>
-          <el-dropdown-item>报表</el-dropdown-item>
-          <el-dropdown-item>统计图</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-    </div>-->
-    <!-- 二级头部----if--需要变化的 -->
-    <!-- <div class="dataAnalysis_content" v-else>
-      <span class="dataAnalysis_spe">|</span>
-      <span class="dataAnalysis_batch">批量:</span>
-      <span class="dataAnalysis_delete" @click="deleit">删除</span>
-      <span class="dataAnalysis_export">导出</span>
-      <span class="dataAnalysis_Mergeexport">合并导出</span>
-    </div>-->
-
-    <!-- <div class="dataAnalysis_content">
-        <el-button type="primary" icon="delete" class="handle-del mr10" @click="delAll">批量删除</el-button>
-        <el-select v-model="select_cate" placeholder="筛选省份" class="handle-select mr10">
-          <el-option key="1" label="广东省" value="广东省"></el-option>
-          <el-option key="2" label="湖南省" value="湖南省"></el-option>
-        </el-select>
-        <el-input v-model="select_word" placeholder="筛选关键词" class="handle-input mr10"></el-input>
-        <el-button type="primary" icon="search" @click="search">搜索</el-button>
-    </div>-->
+  
     <!-- 内容区域 -->
     <div class="dataAnalysis_main">
       <div class="oneData">

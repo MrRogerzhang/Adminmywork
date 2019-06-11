@@ -91,7 +91,7 @@ export default {
             },
             {
               index: "Statisticalindicator",
-              title: "统计指标管理"
+              title: "el-table分页"
             }
           ]
         },

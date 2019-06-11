@@ -121,7 +121,7 @@ export default new Router({
           path: 'Statisticalindicator',
           component: resolve => require(['@/views/pages/dataAnalysis/Statisticalindicator'], resolve),
           meta: {
-            title: '统计指标管理'
+            title: 'el-table分页'
           }
         },
         {
