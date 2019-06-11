@@ -36,4 +36,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ![图片](./README/7.png)
 
 
-## icons svg 出错了
+ 
