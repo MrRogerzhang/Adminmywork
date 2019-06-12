@@ -35,9 +35,7 @@ export default {
     };
   },
   created() {
-    // console.log(this.type)
     this.tab = this.$route.query.tab;
-    // console.log(this.tab);
   },
   mounted() {
     this.getTabData();
@@ -46,7 +44,6 @@ export default {
     getTabData() {
       this.$post("/elTabpane", {}).then(respone => {
         this.getElTabData = respone.data;
-        // console.log(this.getElTabData)
       });
     }
   },

@@ -111,6 +111,41 @@ export default new Router({
           }
         },
         {
+          path: 'zujian1',
+          component: resolve => require(['@/views/pages/zujian/1'], resolve),
+          meta: {
+            title: '组件1'
+          }
+        },
+        {
+          path: 'zujian2',
+          component: resolve => require(['@/views/pages/zujian/2'], resolve),
+          meta: {
+            title: '组件2'
+          }
+        },
+        {
+          path: 'zujian3',
+          component: resolve => require(['@/views/pages/zujian/3'], resolve),
+          meta: {
+            title: '组件3'
+          }
+        },
+        {
+          path: 'zujian4',
+          component: resolve => require(['@/views/pages/zujian/4'], resolve),
+          meta: {
+            title: '组件4'
+          }
+        },
+        {
+          path: 'zujian5',
+          component: resolve => require(['@/views/pages/zujian/5'], resolve),
+          meta: {
+            title: '组件5'
+          }
+        },
+        {
           path: 'Report',
           component: resolve => require(['@/views/pages/dataAnalysis/Report'], resolve),
           meta: {

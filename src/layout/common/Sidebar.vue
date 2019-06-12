@@ -63,16 +63,45 @@ export default {
               index: "bao1",
               title: "报表1"
             },
-              {
+            {
               index: "bao2",
               title: "报表2"
             },
-              {
+            {
               index: "bao3",
               title: "报表3"
+            }
+          ]
+        },
+        {
+          icon: "el-icon-rank",
+          index: "2",
+          title: "组件间通信",
+          subs: [
+            {
+              index: "zujian1",
+              title: "组件1"
             },
-          
-            
+
+            {
+              index: "zujian2",
+              title: "组件2"
+            },
+
+            {
+              index: "zujian3",
+              title: "组件3"
+            },
+
+            {
+              index: "zujian4",
+              title: "组件4"
+            },
+
+            {
+              index: "zujian5",
+              title: "组件5"
+            }
           ]
         },
         {
@@ -256,7 +285,6 @@ export default {
               title: "产品"
             }
           ]
-
         },
         {
           icon: "el-icon-rank",
