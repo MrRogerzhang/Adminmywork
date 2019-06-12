@@ -1,22 +1,33 @@
 <template>
-  <div>
-    <h3>B组件: {{age}}</h3>
-    <button @click="send">将数组发送给C组件</button>
+  <div style="margin-top:30px;">
+    <p>boo: {{boo}}</p>
+
+    <p>Son3b :{{$attrs}}</p>
+
+    <Son3c v-bind="$attrs"/>
   </div>
 </template>
 
 
 <script>
+import Son3c from "./son3c";
 export default {
-  data() {
-    return {
-      age: ""
-    };
-  },
-  methods: {
-    send() {
-      this.$emit("data2", "瞅你咋滴");
+  inheritAttrs: false,
+  props: {
+    boo: {
+      type: String,
+      required: true
     }
+  },
+  data() {
+    return {};
+  },
+  created() {
+    // console.log(this.$attrs);
+  },
+  methods: {},
+  components: {
+    Son3c
   }
 };
 </script>

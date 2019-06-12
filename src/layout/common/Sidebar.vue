@@ -91,16 +91,6 @@ export default {
             {
               index: "zujian3",
               title: "组件3"
-            },
-
-            {
-              index: "zujian4",
-              title: "组件4"
-            },
-
-            {
-              index: "zujian5",
-              title: "组件5"
             }
           ]
         },

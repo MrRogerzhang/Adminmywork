@@ -131,20 +131,7 @@ export default new Router({
             title: '组件3'
           }
         },
-        {
-          path: 'zujian4',
-          component: resolve => require(['@/views/pages/zujian/4'], resolve),
-          meta: {
-            title: '组件4'
-          }
-        },
-        {
-          path: 'zujian5',
-          component: resolve => require(['@/views/pages/zujian/5'], resolve),
-          meta: {
-            title: '组件5'
-          }
-        },
+     
         {
           path: 'Report',
           component: resolve => require(['@/views/pages/dataAnalysis/Report'], resolve),
