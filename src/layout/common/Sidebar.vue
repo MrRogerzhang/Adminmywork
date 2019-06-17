@@ -12,13 +12,20 @@
     >
       <template v-for="item in items">
         <template v-if="item.subs">
-          <el-submenu :index="item.index" :key="item.index">
+          <el-submenu
+            :index="item.index"
+            :key="item.index"
+          >
             <template slot="title">
               <i :class="item.icon"></i>
               <span slot="title">{{ item.title }}</span>
             </template>
             <template v-for="subItem in item.subs">
-              <el-submenu v-if="subItem.subs" :index="subItem.index" :key="subItem.index">
+              <el-submenu
+                v-if="subItem.subs"
+                :index="subItem.index"
+                :key="subItem.index"
+              >
                 <template slot="title">{{ subItem.title }}</template>
                 <el-menu-item
                   v-for="(threeItem,i) in subItem.subs"
@@ -26,12 +33,19 @@
                   :index="threeItem.index"
                 >{{ threeItem.title }}</el-menu-item>
               </el-submenu>
-              <el-menu-item v-else :index="subItem.index" :key="subItem.index">{{ subItem.title }}</el-menu-item>
+              <el-menu-item
+                v-else
+                :index="subItem.index"
+                :key="subItem.index"
+              >{{ subItem.title }}</el-menu-item>
             </template>
           </el-submenu>
         </template>
         <template v-else>
-          <el-menu-item :index="item.index" :key="item.index">
+          <el-menu-item
+            :index="item.index"
+            :key="item.index"
+          >
             <i :class="item.icon"></i>
             <span slot="title">{{ item.title }}</span>
           </el-menu-item>
@@ -50,7 +64,7 @@ export default {
       items: [
         {
           icon: "el-icon-s-home",
-          index: "first",
+          index: "Home",
           title: "首页"
         },
         // 要修改的集中地

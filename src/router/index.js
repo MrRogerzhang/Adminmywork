@@ -6,7 +6,7 @@ import page403 from '@/views/pages/403'
 // import login from '@/views/pages/login'
 
 // // 首页文件
-// import first from '@/views/pages/first/first'
+// import Home from '@/views/pages/Home/Home'
 
 // // 数据看板文件
 // import databoard from '@/views/pages/databoard/databoard';
@@ -67,7 +67,7 @@ Vue.use(Router)
 export default new Router({
   routes: [{
       path: '/',
-      redirect: '/first'
+      redirect: '/Home'
     },
     {
       path: '/',
@@ -76,8 +76,8 @@ export default new Router({
         title: '自述文件'
       },
       children: [{
-          path: 'first',
-          component: resolve => require(['@/views/pages/first/first'], resolve),
+          path: 'Home',
+          component: resolve => require(['@/views/pages/Home/Home'], resolve),
           meta: {
             title: '系统首页'
           }
@@ -131,7 +131,7 @@ export default new Router({
             title: '组件3'
           }
         },
-     
+
         {
           path: 'Report',
           component: resolve => require(['@/views/pages/dataAnalysis/Report'], resolve),
