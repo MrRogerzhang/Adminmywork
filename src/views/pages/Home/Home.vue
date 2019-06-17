@@ -59,7 +59,7 @@ h1 {
   text-align: center;
   line-height: 30px;
   margin-left: 10px;
-  border-radius: 3%;
+  border-radius: 10px;
   background-color: tomato;
 }
 .date1 p {
@@ -71,7 +71,7 @@ h1 {
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-  border-radius: 3%;
+  border-radius: 10px;
 }
 
 .date2 p {
@@ -81,7 +81,7 @@ h1 {
   width: 120px;
   height: 40px;
   margin-left: 10px;
-  border-radius: 3%;
+  border-radius: 10px;
   margin-top: 10px;
 }
 .date1 p:first-child {
