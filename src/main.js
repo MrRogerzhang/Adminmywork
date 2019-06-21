@@ -10,7 +10,7 @@ import "@/style/css/color-dark.css";
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 // 引入清除默认样式文件
-// import '@/assets/love.js'
+import '@/assets/love.js'
 // // 引入axios
 // import axios from 'axios'
 // // 引入elementui
@@ -53,7 +53,7 @@ Vue.prototype.$patch = patch;
 Vue.prototype.$put = put;
 Vue.prototype.untils = untils
 router.beforeEach((to, from, next) => {
-  
+
   const role = localStorage.getItem('ms_username')
   if (!role && to.path !== '/login') {
     next('/login')

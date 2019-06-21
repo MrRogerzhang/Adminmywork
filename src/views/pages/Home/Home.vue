@@ -4,13 +4,13 @@
       <h1>数据统计</h1>
       <div class="date1">
         <p>当日数据</p>
-        <p>{{addPeo}} 新增用户</p>
+        <p>{{userList.length}} 登录用户</p>
         <p>{{addOrder}} 新增订单</p>
         <p>{{newSale}} 销售额</p>
       </div>
       <div class="date2">
         <p>总数据</p>
-        <p>{{newPeo}} 注册用户</p>
+        <p>{{userList.length}} 注册用户</p>
         <p>{{newOder}} 订单</p>
         <p>{{oldSale}} 历史销售额</p>
       </div>
@@ -33,12 +33,43 @@ export default {
       newSale: 0,
       newPeo: 0,
       newOder: 0,
-      oldSale: 0
+      oldSale: 0,
+      // 用户数据
+      userList: [],
+      // 订单金额
+      orderList: []
     };
   },
-  components: { Vline }
+  components: { Vline },
+  created() {
+    this.getAlldata();
+  },
+  methods: {
+    getAlldata() {
+      var that = this;
+      this.$fetch("http://localhost:9562/admin/AllData")
+        .then(res => {
+          console.log(res);
+          let user = res.find(v => v.type === "user").data;
+          let order = res.find(v => v.type === "order").data;
+          // 用户数据
+          that.userList = user;
+          // 订单金额
+          that.orderList = order;
+        })
+        .then(user => {});
+    }
+  }
 };
 </script>
+
+
+
+
+
+
+
+
 
  <style scoped>
 .maindate {
