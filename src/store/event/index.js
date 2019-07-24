@@ -7,7 +7,7 @@
    event: [],
    count: 0
  }
-
+console.log(state)
 
  export default {
    state,

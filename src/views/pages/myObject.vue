@@ -111,6 +111,7 @@ export default {
       self.content = self.content.trim();
       if (self.content) {
         params.content = self.content;
+        console.log(params)
         self.$store.dispatch("addevent", params);
         self.content = "";
       } else {

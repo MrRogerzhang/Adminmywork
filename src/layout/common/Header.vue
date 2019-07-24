@@ -27,7 +27,7 @@
         <div class="btn-bell">
           <el-tooltip
             effect="dark"
-            :content="message?`有${message}条未读消息`:`消息中心`"
+           
             placement="bottom"
           >
             <router-link to="/CRMinformation">

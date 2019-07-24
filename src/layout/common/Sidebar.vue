@@ -79,7 +79,7 @@ export default {
             },
             {
               index: "bao2",
-              title: "报表2"
+              title: "插槽"
             },
             {
               index: "bao3",

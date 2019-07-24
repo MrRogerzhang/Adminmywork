@@ -2,12 +2,12 @@ import * as type from './mutaion-types';
 import {
   getDate
 } from '../function'
-import {
-  stat
-} from 'fs';
+
 
 export default {
   [type.ADDEVENT](states, obj) {
+    console.log(states)
+    console.log(obj)
     states.count++
     obj.items.id = states.count
     states.event.unshift(obj.items)

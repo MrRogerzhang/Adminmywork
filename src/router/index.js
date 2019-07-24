@@ -100,7 +100,7 @@ export default new Router({
           path: 'bao2',
           component: resolve => require(['@/views/pages/baobiao/2'], resolve),
           meta: {
-            title: '报表2'
+            title: '插槽'
           }
         },
         {
